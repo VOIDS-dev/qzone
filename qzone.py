@@ -15,9 +15,10 @@ requests.packages.urllib3.disable_warnings()
 
 
 class QQShareFile(object):
-    def __init__(self, website='qqzone'):
+    def __init__(self, prefix='cookies', website='qqzone'):
         self.website = website
-        self.cookies_db = RedisClient('cookies', self.website)
+        self.prefix = prefix
+        self.cookies_db = RedisClient(self.prefix, self.website)
         self.db = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, password=MYSQL_PASSWORD, port=MYSQL_PORT,
                                   db=MYSQL_DATABASE)
         self.cursor = self.db.cursor()
@@ -158,4 +159,5 @@ if __name__ == '__main__':
             time.sleep(300)
             continue
         finally:
+            qq.cookies_db.delete(QQ)
             del qq
