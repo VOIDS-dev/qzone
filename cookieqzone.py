@@ -14,6 +14,10 @@ class QQShareFile(object):
     def __init__(self, website='qqzone'):
         self.website = website
         self.cookies_db = RedisClient('cookies', self.website)
+        result = self.cookies_db.get(QQ)
+        if result:
+            self.cookies_db.delete(QQ)
+            print("Succeeded to delete cookie")
         self.chrome_options = webdriver.ChromeOptions()
         if platform.platform().startswith('Windows'):
             self.browser = webdriver.Chrome(chrome_options=self.chrome_options,
@@ -28,6 +32,7 @@ class QQShareFile(object):
         try:
             if self.cookies_db.set(QQ, json.dumps(dictCookies)):
                 print('Cookie保存成功')
+                print('Cookie: ', dictCookies)
             else:
                 print('Failed to save cookie!')
         except Exception as e:

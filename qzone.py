@@ -36,6 +36,14 @@ class QQShareFile(object):
             t += (t << 5) + ord(value[i])
         self.g_tk = t & 2147483647
 
+    def delete(self):
+        """
+        Delete cookie
+        :return: None
+        """
+        if self.cookies_db:
+            self.cookies_db.delete(QQ)
+
     def extract(self, splitstr):
         beg = splitstr.find('(')
         end = splitstr.rfind(');')
@@ -159,5 +167,5 @@ if __name__ == '__main__':
             time.sleep(300)
             continue
         finally:
-            qq.cookies_db.delete(QQ)
+            qq.delete()
             del qq

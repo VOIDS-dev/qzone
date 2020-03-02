@@ -81,6 +81,9 @@ class RedisClient(object):
 
 
 if __name__ == '__main__':
-    conn = RedisClient('cookies', 'qqshare')
-    result = list(conn.get('2337956208'))
-    print(type(result))
+    conn = RedisClient('cookies', 'qqzone')
+    result = conn.get('2337956208')
+    print(result)
+    conn.delete('2337956208')
+    result = conn.get('2337956208')
+    print(result)
