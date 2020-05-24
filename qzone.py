@@ -71,23 +71,24 @@ class QQShareFile(object):
         jsonData = json.loads(response)
         items = jsonData['data']['group']
         for item in items:
-            groupid = item['groupid']
-            params = {
-                'uin': QQ,
-                'groupid': groupid,
-                'bussinessid': 0,
-                'r': str(random.random()),
-                'charset': 'utf-8',
-                'g_tk': self.g_tk
-            }
-            response = requests.get(url=GROUP_FILE_SHARE_URL, params=params, verify=False, headers=HEADERS,
-                                    cookies=self.cookie_jar, allow_redirects=False)
-            if response.status_code == 200:
-                resp = self.extract(response.text)
-            yield {
-                'response': resp,
-                'groupid': groupid
-            }
+            if groupid in target_group_list:
+                groupid = item['groupid']
+                params = {
+                    'uin': QQ,
+                    'groupid': groupid,
+                    'bussinessid': 0,
+                    'r': str(random.random()),
+                    'charset': 'utf-8',
+                    'g_tk': self.g_tk
+                }
+                response = requests.get(url=GROUP_FILE_SHARE_URL, params=params, verify=False, headers=HEADERS,
+                                        cookies=self.cookie_jar, allow_redirects=False)
+                if response.status_code == 200:
+                    resp = self.extract(response.text)
+                yield {
+                    'response': resp,
+                    'groupid': groupid
+                }
 
     def get_file_download_url(self, d):
         jsonData = json.loads(d['response'])

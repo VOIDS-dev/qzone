@@ -1,4 +1,7 @@
-QQ = '2337956208'
+QQ = '232742660'
+
+#gourp list
+target_group_list = ['192223812'];
 
 # qzone代理地址
 GET_QZONE_COOKIE_CMD = 'curl http://127.0.0.1:5000/qzone/random'
@@ -14,7 +17,7 @@ HEADERS = {
 # mysql configuration
 MYSQL_HOST = '*'
 MYSQL_USER = 'root'
-MYSQL_PASSWORD = '*'
+MYSQL_PASSWORD = 'password'
 MYSQL_PORT = 3306
 MYSQL_DATABASE = 'ica'
 MYSQL_TABLE = 'qqshare'
@@ -24,3 +27,19 @@ REDIS_HOST = '*'
 REDIS_PORT = 6379
 REDIS_PASSWORD = '*'
 REDIS_DB = 2
+
+#Onedrive configuration
+redirect_uri = 'http://localhost:8080/'
+client_secret = '~e.IK6pavvzc.TZ7st4Zy8LQI-wen1_k2t'
+client_id='66f9a768-032a-489e-9b54-dc56672a7d6e'
+api_base_url='https://api.onedrive.com/v1.0/'
+graph_base_url = 'https://graph.microsoft.com/v1.0/'
+scopes=['offline_access', 'files.readwrite.all']
+
+token_base_url = 'https://login.live.com'
+token_path = "/oauth20_token.srf"
+grant_type = "authorization_code"
+
+#local
+base_folder = "/disk-content"
+
