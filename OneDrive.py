@@ -206,10 +206,7 @@ class OneDriveUtil():
         return next_expected_ranges
     
     def save_uploadurl(self,  uploadurl, parent_path, filename):
-        
-        
-        
-        
+        pass
 #     client = onedrivesdk.OneDriveClient(api_base_url, auth_provider, http_provider)
 #     auth_url = client.auth_provider.get_auth_url(redirect_uri)
 #     # Ask for the code
