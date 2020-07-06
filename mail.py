@@ -13,7 +13,7 @@ def _format_addr(s):
 def send_mail():
     from_addr = '290868461@qq.com'  # input('From: ')
     password = 'kommcwxdcilkbjdc'  # input('Password: ')
-    to_addr = 'andrew_wf@sina.cn'  # input('To: ')
+    to_addr = '232742660@qq.com'  # input('To: ')
     smtp_server = 'smtp.qq.com'  # input('SMTP server: ')
 
     msg = MIMEText('The qzone cookie is invalid, generate new cookie please!!!', 'plain', 'utf-8')

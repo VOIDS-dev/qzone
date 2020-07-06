@@ -12,7 +12,7 @@ class RedisClient(object):
         :param port: 端口
         :param password: 密码
         """
-        self.db = redis.StrictRedis(host=host, port=port, password=password, db=db, decode_responses=True)
+        self.db = redis.StrictRedis(host=host, port=port, db=db, decode_responses=True)
         # redis_str = 'redis://:{password}@{host}:{port}/{db}'.format(password=password, host=host, port=port,
         #                                                             db=db)
         # self.db = redis.from_url(redis_str)

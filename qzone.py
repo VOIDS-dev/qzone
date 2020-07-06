@@ -155,18 +155,18 @@ class QQShareFile(object):
 
 
 if __name__ == '__main__':
-    while True:
-        try:
+#     while True:
+#         try:
             qq = QQShareFile()
             qq.main()
             time.sleep(300)
-        except Exception as e:
-            print(e.args)
-            p = Process(target=send_mail, args=())
-            p.start()
-            p.join()
-            time.sleep(300)
-            continue
-        finally:
-            qq.delete()
-            del qq
+#         except Exception as e:
+#             print(e.args)
+#             p = Process(target=send_mail, args=())
+#             p.start()
+#             p.join()
+#             time.sleep(300)
+#             continue
+#         finally:
+#             qq.delete()
+#             del qq

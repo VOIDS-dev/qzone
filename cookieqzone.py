@@ -21,7 +21,7 @@ class QQShareFile(object):
         self.chrome_options = webdriver.ChromeOptions()
         if platform.platform().startswith('Windows'):
             self.browser = webdriver.Chrome(chrome_options=self.chrome_options,
-                                            executable_path=r'C:\ProgramData\Anaconda3\chromedriver.exe')
+                                            executable_path=r'D:\WORKSPACE\Subtitle\qzone\chromedriver.exe')
         else:
             self.browser = webdriver.Chrome(chrome_options=self.chrome_options,
                                             executable_path=r'/usr/local/bin/chromedriver')
